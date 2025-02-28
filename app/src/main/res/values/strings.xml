@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">MyBrightMind</string>
+    <string name="image_for_home_screen">Image for Home Screen</string>
+    <string name="homescreen_image">Home-screen Image</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="ready_to_explore">Ready to Explore?</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="you_are">You Are</string>
+    <string name="student">Student</string>
+    <string name="parent">Parent</string>
+    <string name="let_s_go">Let\'s Go</string>
+    <string name="teacher">Teacher</string>
+    <string-array name="headings">
+        <item>
+        Tap, Learn and Explore!
+        </item>
+        <item>
+            Play, Learn and Conquer
+        </item>
+        <item>
+            Turn Screen Time into Smart Time!
+        </item>
+        <item>
+            Turn Lessons into Adventures!
+        </item>
+    </string-array>
+    <string-array name="sub_headings">
+        <item>
+            Discover cool facts, solve mysteries and play your way to knowledge
+        </item>
+        <item>
+            Crack mysteries and unlock knowledge! Learning has never been this fun!
+        </item>
+        <item>
+            Fun for them, peace of mind for you! Track progress and fuel curiosity.
+        </item>
+        <item>
+            Goodbye boring lessons, hello adventure! Engage students like never before!
+        </item>
+    </string-array>
+</resources>

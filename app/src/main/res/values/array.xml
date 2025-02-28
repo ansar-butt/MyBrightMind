@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <array name="homeImages">
+            <item>@drawable/home1</item>
+            <item>@drawable/home2</item>
+        </array>
+</resources>
