@@ -1,8 +1,11 @@
 package com.example.mybrightmind;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageSwitcher;
@@ -17,9 +20,19 @@ import androidx.core.view.WindowInsetsCompat;
 
 
 public class MainActivity extends AppCompatActivity {
-    private final int[] homeImages = {R.drawable.home1, R.drawable.home2, R.drawable.home3, R.drawable.home4};
+    private TypedArray homeImages;
+    private TypedArray fillImages;
+    private String[] headingList;
+    private String[] subHeadingList;
+    private ImageSwitcher imageSwitcher;
+    private ImageSwitcher fillSwitcher;
     private int imageIndex = 0;
+    private float x1, x2;
+    static final int MIN_DISTANCE = 30;
+    TextView heading;
+    TextView subHeading;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,33 +43,64 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ImageSwitcher imageSwitcher = findViewById(R.id.HomeImage);
+
+        imageSwitcher = findViewById(R.id.HomeImage);
+        fillSwitcher = findViewById(R.id.fillImage);
         imageSwitcher.setFactory(() -> {
             ImageView imgView = new ImageView(getApplicationContext());
-            imgView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            imgView.setPadding(8, 8, 8, 8);
+            imgView.setScaleType(ImageView.ScaleType.FIT_XY);
+            return imgView;
+        });
+        fillSwitcher.setFactory(() -> {
+            ImageView imgView = new ImageView(getApplicationContext());
+            imgView.setScaleType(ImageView.ScaleType.CENTER);
             return imgView;
         });
 
-        imageSwitcher.setImageResource(homeImages[imageIndex]);
-        imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right));
+        imageSwitcher.setOnTouchListener((v, event) -> {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    x1 = event.getX();
+                    return true;
+                case MotionEvent.ACTION_UP:
+                    x2 = event.getX();
+                    float deltaX = x2 - x1;
+                    if (deltaX > MIN_DISTANCE && imageIndex > 0) {
+                        imageIndex--;
+                        setCardValues();
+                    } else if (deltaX < 0 && imageIndex < homeImages.length() - 1) {
+                        imageIndex++;
+                        imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left));
+                        setCardValues();
+                    }
+                    return true;
+                default:
+                    return false;
+            }
+        });
+
+        headingList = getResources().getStringArray(R.array.headings);
+        subHeadingList = getResources().getStringArray(R.array.sub_headings);
+        homeImages = getResources().obtainTypedArray(R.array.homeImages);
+        fillImages = getResources().obtainTypedArray(R.array.fills);
+        heading = findViewById(R.id.Heading);
+        subHeading = findViewById(R.id.SubHeading);
 
         Button nextButton = findViewById(R.id.Next);
+
+        setCardValues();
+
         nextButton.setOnClickListener(v -> {
-            if (imageIndex < homeImages.length - 1) {
+            if (imageIndex < homeImages.length() - 1) {
                 imageIndex++;
-                imageSwitcher.setImageResource(homeImages[imageIndex]);
+                setCardValues();
             } else {
                 goToSignUpActivity();
             }
-
         });
-
 
         TextView skipText = findViewById(R.id.Skip);
-        skipText.setOnClickListener(view -> {
-            goToSignUpActivity();
-        });
+        skipText.setOnClickListener(view -> goToSignUpActivity());
     }
 
     private void goToSignUpActivity() {
@@ -65,4 +109,11 @@ public class MainActivity extends AppCompatActivity {
         setResult(Activity.RESULT_OK);
     }
 
+    private void setCardValues() {
+        imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right));
+        imageSwitcher.setImageResource(homeImages.getResourceId(imageIndex, -1));
+        fillSwitcher.setImageResource(fillImages.getResourceId(imageIndex, -1));
+        heading.setText(headingList[imageIndex]);
+        subHeading.setText(subHeadingList[imageIndex]);
+    }
 }

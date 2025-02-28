@@ -7,12 +7,16 @@
     <string name="ready_to_explore">Ready to Explore?</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="you_are">You Are</string>
+    <string name="you_are">Are you a…</string>
     <string name="student">Student</string>
     <string name="parent">Parent</string>
     <string name="let_s_go">Let\'s Go</string>
     <string name="teacher">Teacher</string>
-    <string-array name="headings">
+	<string name="heading">Heading</string>
+    <string name="subheading">SubHeading</string>
+    <string name="fill_images">Fill Images</string>
+	<string name="general_image">General Image</string>
+	<string-array name="headings">
         <item>
         Tap, Learn and Explore!
         </item>
@@ -20,7 +24,7 @@
             Play, Learn and Conquer
         </item>
         <item>
-            Turn Screen Time into Smart Time!
+            Screen Time is Smart Time!
         </item>
         <item>
             Turn Lessons into Adventures!

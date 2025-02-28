@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        <array name="homeImages">
-            <item>@drawable/home1</item>
-            <item>@drawable/home2</item>
-        </array>
+	<integer-array name="homeImages">
+		<item>@drawable/home1</item>
+		<item>@drawable/home2</item>
+		<item>@drawable/home3</item>
+		<item>@drawable/home4</item>
+	</integer-array>
+	<integer-array name="fills">
+		<item>@drawable/fill1</item>
+		<item>@drawable/fill2</item>
+		<item>@drawable/fill3</item>
+		<item>@drawable/fill4</item>
+	</integer-array>
 </resources>
