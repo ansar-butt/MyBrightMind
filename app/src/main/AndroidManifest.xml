@@ -27,6 +27,21 @@
         <activity android:name=".signUpActivity">
 
         </activity>
+        <activity android:name=".homeActivity">
+
+        </activity>
+        <activity android:name=".exploreActivity">
+
+        </activity>
+        <activity android:name=".learnActivity">
+
+        </activity>
+        <activity android:name=".rewardActivity">
+
+        </activity>
+        <activity android:name=".searchActivity">
+
+        </activity>
     </application>
 
 </manifest>

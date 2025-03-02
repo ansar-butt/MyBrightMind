@@ -11,12 +11,19 @@ import android.widget.Button;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -101,6 +108,26 @@ public class MainActivity extends AppCompatActivity {
 
         TextView skipText = findViewById(R.id.Skip);
         skipText.setOnClickListener(view -> goToSignUpActivity());
+        try {
+            FileInputStream fis = this.openFileInput("userData");
+            InputStreamReader inputStreamReader =
+                    new InputStreamReader(fis, StandardCharsets.UTF_8);
+            StringBuilder stringBuilder = new StringBuilder();
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            String line = reader.readLine();
+            if (!line.isEmpty())
+                goToHomeActivity();
+        } catch (IOException e) {
+            // Error occurred when opening raw file for reading.
+        } finally {
+            String contents = "stringBuilder.toString();";
+        }
+    }
+
+    private void goToHomeActivity() {
+        Intent intent = new Intent(this, homeActivity.class);
+        startActivity(intent);
+        setResult(Activity.RESULT_OK);
     }
 
     private void goToSignUpActivity() {

@@ -1,0 +1,84 @@
+package com.example.mybrightmind;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.navigation.NavigationBarView;
+
+public class BottomNav extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    protected void defineNavBar() {
+        NavigationBarView navBar = findViewById(R.id.bottom_navigation);
+
+        try{
+            navBar.setOnItemSelectedListener(item -> {
+                int exploreButton = R.id.explore_button;
+                int learnButton = R.id.learn_button;
+                int rewardButton = R.id.reward_button;
+                int searchButton = R.id.search_button;
+
+                int id = item.getItemId();
+                if (id == searchButton) {
+                    findViewById(searchButton).setBackgroundColor(getColor(R.color.white));
+                    goToSearchActivity();
+                    return true;
+                } else if (id == exploreButton) {
+                    goToExploreActivity();
+                    return true;
+                } else if (id == learnButton) {
+                    goToLearnActivity();
+                    return true;
+                } else if (id == rewardButton) {
+                    goToRewardActivity();
+                    return true;
+                } else {
+                    findViewById(searchButton).setBackgroundColor(getColor(R.color.white));
+                    goToHomeActivity();
+                    return true;
+                }
+            });
+
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    private void goToSearchActivity() {
+        Intent intent = new Intent(this, searchActivity.class);
+        startActivity(intent);
+        setResult(Activity.RESULT_OK);
+    }
+
+    private void goToRewardActivity() {
+        Intent intent = new Intent(this, rewardActivity.class);
+        startActivity(intent);
+        setResult(Activity.RESULT_OK);
+    }
+
+    private void goToLearnActivity() {
+        Intent intent = new Intent(this, learnActivity.class);
+        startActivity(intent);
+        setResult(Activity.RESULT_OK);
+    }
+
+    private void goToExploreActivity() {
+        Intent intent = new Intent(this, exploreActivity.class);
+        startActivity(intent);
+        setResult(Activity.RESULT_OK);
+    }
+
+    private void goToHomeActivity() {
+        Intent intent = new Intent(this, homeActivity.class);
+        startActivity(intent);
+        setResult(Activity.RESULT_OK);
+    }
+}

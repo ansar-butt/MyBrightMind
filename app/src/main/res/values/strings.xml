@@ -16,7 +16,18 @@
     <string name="subheading">SubHeading</string>
     <string name="fill_images">Fill Images</string>
 	<string name="general_image">General Image</string>
-	<string-array name="headings">
+	<string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="learn">Learn</string>
+    <string name="rewards">Rewards</string>
+    <string name="search">Search</string>
+	<string name="good_morning">Good Morning,</string>
+    <string name="user_name">User Name</string>
+    <string name="courses">Courses</string>
+    <string name="see_all_courses">See All Courses</string>
+    <string name="story_world">Story World</string>
+    <string name="see_all_books">See All Books</string>
+    <string-array name="headings">
         <item>
         Tap, Learn and Explore!
         </item>
