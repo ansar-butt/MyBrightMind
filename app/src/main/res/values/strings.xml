@@ -27,7 +27,8 @@
     <string name="see_all_courses">See All Courses</string>
     <string name="story_world">Story World</string>
     <string name="see_all_books">See All Books</string>
-    <string-array name="headings">
+	<string name="start_learning">Start Learning</string>
+	<string-array name="headings">
         <item>
         Tap, Learn and Explore!
         </item>

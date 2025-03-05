@@ -1,6 +1,9 @@
 package com.example.mybrightmind;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
@@ -21,6 +24,19 @@ public class homeActivity extends BottomNav {
             return insets;
         });
 
+        TextView allCourses = findViewById(R.id.all_courses);
+        allCourses.setOnClickListener(v->goToAllModules("Courses"));
+        
+        TextView allStories = findViewById(R.id.all_books);
+        allStories.setOnClickListener(v->goToAllModules("Story World"));
 
     }
+
+    private void goToAllModules(String type) {
+        Intent intent = new Intent(this, moduleActivity.class);
+        intent.putExtra("type", type);
+        startActivity(intent);
+        setResult(Activity.RESULT_OK);
+    }
+
 }

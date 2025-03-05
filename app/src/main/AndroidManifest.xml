@@ -42,6 +42,9 @@
         <activity android:name=".searchActivity">
 
         </activity>
+        <activity android:name=".moduleActivity">
+
+        </activity>
     </application>
 
 </manifest>
