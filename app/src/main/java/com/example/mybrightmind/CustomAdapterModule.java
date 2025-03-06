@@ -1,6 +1,8 @@
 package com.example.mybrightmind;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,34 +15,41 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class customAdapterModule extends RecyclerView<customAdapterModule.ViewHolder> {
+public class CustomAdapterModule extends RecyclerView.Adapter<CustomAdapterModule.ViewHolder> {
     private final ArrayList<String> mTopicList;
+    private final ArrayList<Integer> mResources;
 
-    public customAdapterModule(ArrayList<String> topics) {
+    public CustomAdapterModule(ArrayList<String> topics, ArrayList<Integer> resources) {
         mTopicList = topics;
+        mResources = resources;
     }
 
     @NonNull
     @Override
-    public customAdapterModule.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CustomAdapterModule.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.module_item, parent, false);
-        return new customAdapterModule.ViewHolder(v);
+        return new CustomAdapterModule.ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.getTextView().setText(mTopicList.get(position));
-        holder.getTopicImage().setImageDrawable(mBookingList.get(position).getBookingEnd());
-        holder.getButton();
+        holder.getTopicImage().setImageResource(mResources.get(position));
+        holder.getButton().setOnClickListener(v -> {
+            Context context = v.getContext();
+            Intent intent = new Intent(context, moduleActivity.class);
+            intent.putExtra("lessonName", mTopicList.get(position));
+            context.startActivity(intent);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return mBookingList.size();
+        return mTopicList.size();
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView topicName;
         ImageView topicImage;
         Button topicButton;
@@ -52,7 +61,7 @@ public class customAdapterModule extends RecyclerView<customAdapterModule.ViewHo
             topicName = itemView.findViewById(R.id.topic);
             topicButton = itemView.findViewById(R.id.startLearning);
 
-            topicButton.setOnClickListener(v->goToTopic());
+            topicButton.setOnClickListener(v -> goToTopic());
         }
 
         private void goToTopic() {
@@ -63,8 +72,8 @@ public class customAdapterModule extends RecyclerView<customAdapterModule.ViewHo
             return topicName;
         }
 
-        ImageView getTopicImage(){
-            return  topicImage;
+        ImageView getTopicImage() {
+            return topicImage;
         }
 
         Button getButton() {

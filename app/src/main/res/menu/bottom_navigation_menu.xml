@@ -6,27 +6,27 @@
 
 	<item
 		android:id="@+id/home_button"
-		android:icon="@drawable/family_home"
+		android:icon="@drawable/baseline_home_24"
 		android:title="@string/home"
 		app:showAsAction="withText" />
 	<item
 		android:id="@+id/explore_button"
-		android:icon="@drawable/explore_icon"
+		android:icon="@drawable/baseline_explore_24"
 		android:title="@string/explore"
 		app:showAsAction="withText" />
 	<item
 		android:id="@+id/learn_button"
-		android:icon="@drawable/learn_icon"
+		android:icon="@drawable/baseline_book_24"
 		android:title="@string/learn"
 		app:showAsAction="withText" />
 	<item
 		android:id="@+id/reward_button"
-		android:icon="@drawable/award_icon"
+		android:icon="@drawable/baseline_celebration_24"
 		android:title="@string/rewards"
 		app:showAsAction="withText" />
 	<item
 		android:id="@+id/search_button"
-		android:icon="@drawable/search_icon"
+		android:icon="@drawable/baseline_find_in_page_24"
 		android:title="@string/search"
 		app:showAsAction="withText" />
 </menu>

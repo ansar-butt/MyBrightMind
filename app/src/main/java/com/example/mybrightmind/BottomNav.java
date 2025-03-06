@@ -16,6 +16,7 @@ public class BottomNav extends AppCompatActivity {
 
     protected void defineNavBar() {
         NavigationBarView navBar = findViewById(R.id.bottom_navigation);
+        
 
         try{
             navBar.setOnItemSelectedListener(item -> {

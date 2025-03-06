@@ -3,53 +3,70 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
+	android:layout_height="wrap_content"
 	app:circularflow_radiusInDP="10">
 
 	<androidx.cardview.widget.CardView
-		android:layout_width="match_parent"
+		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		android:backgroundTint="#ECECFA"
-		app:cardCornerRadius="15dip"
+		android:backgroundTint="#FFFFFF"
+		app:cardElevation="0dp"
+		app:contentPaddingTop="40dip"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
 
-		<LinearLayout
+		<androidx.cardview.widget.CardView
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:orientation="vertical">
+			android:layout_height="wrap_content"
+			android:backgroundTint="#ECECFA"
+			android:paddingTop="24dip"
+			app:cardCornerRadius="15dip"
+			app:cardElevation="0dp"
+			app:contentPaddingBottom="24dip"
+			app:contentPaddingTop="24dip">
 
-			<ImageView
-				android:id="@+id/topicImage"
+			<LinearLayout
 				android:layout_width="match_parent"
-				android:layout_height="60dip"
-				tools:srcCompat="@tools:sample/backgrounds/scenic" />
+				android:layout_height="match_parent"
+				android:orientation="vertical">
 
-			<TextView
-				android:id="@+id/topic"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="40dip"
-				android:textSize="24sp"
-				android:textStyle="bold" />
+				<ImageView
+					android:id="@+id/topicImage"
+					android:layout_width="match_parent"
+					android:layout_height="60dip"
+					android:layout_gravity="center|clip_vertical"
+					tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-			<Button
-				android:id="@+id/startLearning"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="40dip"
-				android:layout_marginEnd="30dip"
-				android:backgroundTint="#DDF"
-				android:text="@string/start_learning"
-				android:textAlignment="textStart"
-				android:textColor="#000000"
-				app:cornerRadius="0dp"
-				app:icon="@drawable/arrow_forward"
-				app:iconGravity="end"
-				app:iconSize="20dp"
-				app:iconTint="#000000" />
-		</LinearLayout>
+				<TextView
+					android:id="@+id/topic"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="40dip"
+					android:layout_marginTop="8dip"
+					android:layout_marginBottom="8dip"
+					android:textColor="#000000"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+
+				<Button
+					android:id="@+id/startLearning"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="40dip"
+					android:layout_marginEnd="30dip"
+					android:backgroundTint="#DDF"
+					android:text="@string/start_learning"
+					android:textAlignment="textStart"
+					android:textColor="#000000"
+					app:cornerRadius="0dp"
+					app:icon="@drawable/arrow_forward"
+					app:iconGravity="end"
+					app:iconSize="20dp"
+					app:iconTint="#000000" />
+			</LinearLayout>
+		</androidx.cardview.widget.CardView>
 
 	</androidx.cardview.widget.CardView>
 
