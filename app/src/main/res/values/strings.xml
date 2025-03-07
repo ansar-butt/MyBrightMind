@@ -32,6 +32,9 @@
     <string name="you_have_not_enrolled_in_any_courses_yet">You have not enrolled in any courses yet</string>
     <string name="start_by_enrolling_in_a_course_and_learn_something_new">Start by enrolling in a course and learn something new.</string>
     <string name="explore_courses">Explore Courses</string>
+	<string name="begin_exploring">Begin Exploring!</string>
+	<string name="you_are_about_to_embark_on_an_exciting_journey">You are about to embark on an exciting journey</string>
+    <string name="your_completed_courses_and_rewards_will_be_here">Your completed courses and rewards will be here.</string>
     <string-array name="headings">
         <item>
         Tap, Learn and Explore!

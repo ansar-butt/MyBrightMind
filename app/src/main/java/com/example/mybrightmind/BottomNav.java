@@ -58,13 +58,13 @@ public class BottomNav extends AppCompatActivity {
     }
 
     private void goToRewardActivity() {
-        Intent intent = new Intent(this, rewardActivity.class);
+        Intent intent = new Intent(this, rewardActivityFirst.class);//Add check and redirect to reward proper
         startActivity(intent);
         setResult(Activity.RESULT_OK);
     }
 
     private void goToLearnActivity() {
-        Intent intent = new Intent(this, learnActivityFirst.class);
+        Intent intent = new Intent(this, learnActivityFirst.class); //Add check and redirect to learn proper
         startActivity(intent);
         setResult(Activity.RESULT_OK);
     }

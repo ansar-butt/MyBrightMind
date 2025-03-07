@@ -2,7 +2,6 @@ package com.example.mybrightmind;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,8 +37,8 @@ public class CustomAdapterModule extends RecyclerView.Adapter<CustomAdapterModul
         holder.getTopicImage().setImageResource(mResources.get(position));
         holder.getButton().setOnClickListener(v -> {
             Context context = v.getContext();
-            Intent intent = new Intent(context, moduleActivity.class);
-            intent.putExtra("lessonName", mTopicList.get(position));
+            Intent intent = new Intent(context, lessonActivity.class);
+            intent.putExtra("topicName", mTopicList.get(position));
             context.startActivity(intent);
         });
         Button b = holder.getButton();

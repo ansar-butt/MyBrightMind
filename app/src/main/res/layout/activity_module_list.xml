@@ -1,18 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/module_list"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
 
-	<androidx.recyclerview.widget.RecyclerView
-		android:id="@+id/linearL"
-		android:layout_width="match_parent"
+	<LinearLayout
+		android:id="@+id/linearL2"
+		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:background="#FDEDEA"
+		android:orientation="vertical"
 		app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageButton
+			android:id="@+id/back_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dip"
+			android:layout_marginTop="10dip"
+			android:backgroundTint="#FDEDEA"
+			android:scaleType="center"
+			app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+		<TextView
+			android:id="@+id/topic_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dip"
+			android:layout_marginTop="100dip"
+			android:textColor="#000000"
+			android:textSize="24sp"
+			android:textStyle="bold" />
+
+		<TextView
+			android:id="@+id/topic_description"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dip"
+			android:layout_marginTop="8dip"
+			android:layout_marginBottom="100dip"
+			android:textColor="#000000"
+			android:textSize="16sp" />
+
+		<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginBottom="-30dip"
+			app:cardBackgroundColor="#FFFFFF"
+			app:cardCornerRadius="40dip"
+			app:cardElevation="0dip">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="40dip"
+					android:layout_marginBottom="20dip"
+					android:gravity="center"
+					android:text="@string/begin_exploring"
+					android:textColor="#000000"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+
+				<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/lesson_list"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="35dip"
+					tools:listitem="@layout/lesson_item" />
+
+			</LinearLayout>
+
+		</androidx.cardview.widget.CardView>
+
+	</LinearLayout>
 
 	<com.google.android.material.bottomnavigation.BottomNavigationView
 		android:id="@+id/bottom_navigation"
@@ -27,6 +98,6 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/linearL"
+		app:layout_constraintTop_toBottomOf="@id/linearL2"
 		app:menu="@menu/bottom_navigation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

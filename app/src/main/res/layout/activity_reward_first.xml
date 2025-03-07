@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/learn_first"
+	android:id="@+id/reward_first"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
@@ -9,46 +9,40 @@
 		android:id="@+id/lesson_list"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
-		android:background="#9D9FE5"
+		android:background="@color/white"
 		android:orientation="vertical"
 		app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
 
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="35dip"
-			android:gravity="center_horizontal"
-			android:text="@string/learning_is_fun"
-			android:textColor="#000000"
-			android:textSize="20sp"
-			android:textStyle="bold" />
-
 		<Space
 			android:layout_width="match_parent"
-			android:layout_height="400dip" />
+			android:layout_height="350dip" />
 
 		<TextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_marginStart="40dip"
+			android:layout_marginEnd="40dip"
 			android:gravity="center"
-			android:text="@string/you_have_not_enrolled_in_any_courses_yet"
-			android:textColor="#FFFFFF"
+			android:text="@string/you_are_about_to_embark_on_an_exciting_journey"
+			android:textColor="#000"
 			android:textSize="18sp"
 			android:textStyle="bold" />
 
 		<TextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_marginStart="40dip"
 			android:layout_marginTop="16dip"
+			android:layout_marginEnd="40dip"
 			android:breakStrategy="high_quality"
 			android:gravity="center"
 			android:paddingStart="30dip"
 			android:paddingEnd="30dip"
-			android:text="@string/start_by_enrolling_in_a_course_and_learn_something_new"
-			android:textColor="#FFFFFF"
+			android:text="@string/your_completed_courses_and_rewards_will_be_here"
+			android:textColor="#000"
 			android:textSize="16sp" />
 
 		<Button
@@ -58,7 +52,8 @@
 			android:layout_marginStart="30dip"
 			android:layout_marginTop="24dip"
 			android:layout_marginEnd="30dip"
-			android:background="#2E303C"
+			android:backgroundTint="#2F313E"
+			android:textColor="@color/white"
 			android:text="@string/explore_courses"
 			app:cornerRadius="0dip" />
 	</LinearLayout>
