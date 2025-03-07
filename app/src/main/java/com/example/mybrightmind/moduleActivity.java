@@ -11,6 +11,13 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class moduleActivity extends BottomNav {
@@ -22,6 +29,7 @@ public class moduleActivity extends BottomNav {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_module);
+        defineNavBar(R.id.explore_button);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.module), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -37,25 +45,7 @@ public class moduleActivity extends BottomNav {
         heading.setText(type);
 
         assert type != null;
-        if (type.equals("Courses")) {
-            moduleList.add("Course 1");
-            moduleList.add("Course 2");
-            moduleList.add("Course 3");
-            moduleList.add("Course 4");
-            imageList.add(R.drawable.home1);
-            imageList.add(R.drawable.home1);
-            imageList.add(R.drawable.home1);
-            imageList.add(R.drawable.home1);
-        } else {
-            moduleList.add("Story 1");
-            moduleList.add("Story 2");
-            moduleList.add("Story 3");
-            moduleList.add("Story 4");
-            imageList.add(R.drawable.home2);
-            imageList.add(R.drawable.home2);
-            imageList.add(R.drawable.home2);
-            imageList.add(R.drawable.home2);
-        }
+        getData(type.equals("Courses")?"courses.json":"stories.json");
 
         setRecyclerView();
 
@@ -70,4 +60,25 @@ public class moduleActivity extends BottomNav {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    void getData(String fileName){
+        String json;
+        try{
+            InputStream is = this.getAssets().open(fileName);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, StandardCharsets.UTF_8);
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray arr = jsonObject.getJSONArray("data");
+            for (int i = 0; i < arr.length(); i++){
+                JSONObject jsnObj = arr.getJSONObject(i);
+                moduleList.add((String) jsnObj.get("name"));
+                imageList.add(this.getResources().getIdentifier((String) jsnObj.get("drawable"), "drawable", this.getPackageName()));
+            }
+
+        }  catch (JSONException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -5,4 +5,8 @@
     <color name="button_bg">#2F313E</color>
     <color name="selected_bg">#9D9FE5</color>
     <color name="hyperlink">#696EBA</color>
+    <color name="cardEven">#ECECFA</color>
+    <color name="buttonEven">#DDF</color>
+    <color name="cardOdd">#FDEDEC</color>
+    <color name="buttonOdd">#FFD9D6</color>
 </resources>

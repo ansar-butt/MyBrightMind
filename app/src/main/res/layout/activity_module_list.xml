@@ -1,39 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/module"
-	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<LinearLayout
+
+	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/linearL"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
-		android:background="#FFFFFF"
-		android:orientation="vertical"
-		android:paddingStart="40dip"
-		android:paddingEnd="40dip"
-		app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+		app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent">
-
-		<TextView
-			android:id="@+id/page_type"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="20dip"
-			android:textColor="#000000"
-			android:textSize="18sp"
-			android:textStyle="bold" />
-
-		<androidx.recyclerview.widget.RecyclerView
-			android:id="@+id/module_list"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			tools:listitem="@layout/module_item" />
-	</LinearLayout>
+		app:layout_constraintTop_toTopOf="parent" />
 
 	<com.google.android.material.bottomnavigation.BottomNavigationView
 		android:id="@+id/bottom_navigation"
@@ -50,6 +29,4 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/linearL"
 		app:menu="@menu/bottom_navigation_menu" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

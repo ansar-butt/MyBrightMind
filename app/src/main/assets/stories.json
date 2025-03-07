@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "name": "Great Pyramid",
+      "description": "Unlock the Secrets of the Earth!",
+      "drawable": "home1",
+      "lessons": [
+        {
+          "title": "Rock Types",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types2",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types3",
+          "description": "Meet the Building Blocks of Earth"
+        }
+      ]
+    },
+    {
+      "name": "Great Pyramid 2",
+      "description": "Unlock the Secrets of the Earth!",
+      "drawable": "home2",
+      "lessons": [
+        {
+          "title": "Rock Types",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types2",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types3",
+          "description": "Meet the Building Blocks of Earth"
+        }
+      ]
+    },
+    {
+      "name": "Great Pyramid 3",
+      "description": "Unlock the Secrets of the Earth!",
+      "drawable": "home3",
+      "lessons": [
+        {
+          "title": "Rock Types",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types2",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types3",
+          "description": "Meet the Building Blocks of Earth"
+        }
+      ]
+    },
+    {
+      "name": "Great Pyramid 4",
+      "drawable": "home4",
+      "description": "Unlock the Secrets of the Earth!",
+      "lessons": [
+        {
+          "title": "Rock Types",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types2",
+          "description": "Meet the Building Blocks of Earth"
+        },
+        {
+          "title": "Rock Types3",
+          "description": "Meet the Building Blocks of Earth"
+        }
+      ]
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -41,6 +42,9 @@ public class CustomAdapterModule extends RecyclerView.Adapter<CustomAdapterModul
             intent.putExtra("lessonName", mTopicList.get(position));
             context.startActivity(intent);
         });
+        Button b = holder.getButton();
+        b.setBackgroundColor( b.getResources().getColor(position%2==0?R.color.buttonEven:R.color.buttonOdd));
+        holder.getCardView().setCardBackgroundColor(b.getResources().getColor(position%2==0?R.color.cardEven:R.color.cardOdd));
     }
 
     @Override
@@ -53,6 +57,7 @@ public class CustomAdapterModule extends RecyclerView.Adapter<CustomAdapterModul
         TextView topicName;
         ImageView topicImage;
         Button topicButton;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,12 +65,12 @@ public class CustomAdapterModule extends RecyclerView.Adapter<CustomAdapterModul
             topicImage = itemView.findViewById(R.id.topicImage);
             topicName = itemView.findViewById(R.id.topic);
             topicButton = itemView.findViewById(R.id.startLearning);
+            cardView = itemView.findViewById(R.id.itemCard);
 
-            topicButton.setOnClickListener(v -> goToTopic());
         }
 
-        private void goToTopic() {
-
+        CardView getCardView(){
+            return cardView;
         }
 
         TextView getTextView() {

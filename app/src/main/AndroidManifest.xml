@@ -28,8 +28,7 @@
 
 		<activity android:name=".signUpActivity" />
 		<activity android:name=".homeActivity" />
-		<activity android:name=".exploreActivity" />
-		<activity android:name=".learnActivity" />
+		<activity android:name=".learnActivityFirst" />
 		<activity android:name=".rewardActivity" />
 		<activity android:name=".searchActivity" />
 		<activity android:name=".moduleActivity" />

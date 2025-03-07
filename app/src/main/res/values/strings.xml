@@ -28,7 +28,11 @@
     <string name="story_world">Story World</string>
     <string name="see_all_books">See All Books</string>
 	<string name="start_learning">Start Learning</string>
-	<string-array name="headings">
+	<string name="learning_is_fun">Learning is Fun</string>
+    <string name="you_have_not_enrolled_in_any_courses_yet">You have not enrolled in any courses yet</string>
+    <string name="start_by_enrolling_in_a_course_and_learn_something_new">Start by enrolling in a course and learn something new.</string>
+    <string name="explore_courses">Explore Courses</string>
+    <string-array name="headings">
         <item>
         Tap, Learn and Explore!
         </item>

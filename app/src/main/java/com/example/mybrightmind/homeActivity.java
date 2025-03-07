@@ -10,13 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.navigation.NavigationBarView;
-
 public class homeActivity extends BottomNav {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        defineNavBar();
+        defineNavBar(R.id.home_button);
         EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.home), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -25,10 +23,10 @@ public class homeActivity extends BottomNav {
         });
 
         TextView allCourses = findViewById(R.id.all_courses);
-        allCourses.setOnClickListener(v->goToAllModules("Courses"));
-        
+        allCourses.setOnClickListener(v -> goToAllModules("Courses"));
+
         TextView allStories = findViewById(R.id.all_books);
-        allStories.setOnClickListener(v->goToAllModules("Story World"));
+        allStories.setOnClickListener(v -> goToAllModules("Story World"));
 
     }
 

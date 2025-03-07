@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/module"
-	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/learn_first"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
@@ -10,29 +9,58 @@
 		android:id="@+id/linearL"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
-		android:background="#FFFFFF"
+		android:background="#9D9FE5"
 		android:orientation="vertical"
-		android:paddingStart="40dip"
-		android:paddingEnd="40dip"
 		app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
 
 		<TextView
-			android:id="@+id/page_type"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="20dip"
+			android:layout_marginTop="35dip"
+			android:gravity="center_horizontal"
+			android:text="@string/learning_is_fun"
 			android:textColor="#000000"
+			android:textSize="20sp"
+			android:textStyle="bold" />
+
+		<Space
+			android:layout_width="match_parent"
+			android:layout_height="400dip" />
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="@string/you_have_not_enrolled_in_any_courses_yet"
+			android:textColor="#FFFFFF"
 			android:textSize="18sp"
 			android:textStyle="bold" />
 
-		<androidx.recyclerview.widget.RecyclerView
-			android:id="@+id/module_list"
+		<TextView
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			tools:listitem="@layout/module_item" />
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dip"
+			android:breakStrategy="high_quality"
+			android:gravity="center"
+			android:paddingStart="30dip"
+			android:paddingEnd="30dip"
+			android:text="@string/start_by_enrolling_in_a_course_and_learn_something_new"
+			android:textColor="#FFFFFF"
+			android:textSize="16sp" />
+
+		<Button
+			android:id="@+id/explore_courses_button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="30dip"
+			android:layout_marginTop="24dip"
+			android:layout_marginEnd="30dip"
+			android:background="#2E303C"
+			android:text="@string/explore_courses"
+			app:cornerRadius="0dip" />
 	</LinearLayout>
 
 	<com.google.android.material.bottomnavigation.BottomNavigationView
@@ -50,6 +78,4 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/linearL"
 		app:menu="@menu/bottom_navigation_menu" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

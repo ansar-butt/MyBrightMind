@@ -14,9 +14,9 @@ public class BottomNav extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
-    protected void defineNavBar() {
+    protected void defineNavBar(Integer selected) {
         NavigationBarView navBar = findViewById(R.id.bottom_navigation);
-        
+        navBar.setSelectedItemId(selected);
 
         try{
             navBar.setOnItemSelectedListener(item -> {
@@ -27,7 +27,6 @@ public class BottomNav extends AppCompatActivity {
 
                 int id = item.getItemId();
                 if (id == searchButton) {
-                    findViewById(searchButton).setBackgroundColor(getColor(R.color.white));
                     goToSearchActivity();
                     return true;
                 } else if (id == exploreButton) {
@@ -40,7 +39,6 @@ public class BottomNav extends AppCompatActivity {
                     goToRewardActivity();
                     return true;
                 } else {
-                    findViewById(searchButton).setBackgroundColor(getColor(R.color.white));
                     goToHomeActivity();
                     return true;
                 }
@@ -66,13 +64,14 @@ public class BottomNav extends AppCompatActivity {
     }
 
     private void goToLearnActivity() {
-        Intent intent = new Intent(this, learnActivity.class);
+        Intent intent = new Intent(this, learnActivityFirst.class);
         startActivity(intent);
         setResult(Activity.RESULT_OK);
     }
 
     private void goToExploreActivity() {
-        Intent intent = new Intent(this, exploreActivity.class);
+        Intent intent = new Intent(this, moduleActivity.class);
+        intent.putExtra("type", "Courses");
         startActivity(intent);
         setResult(Activity.RESULT_OK);
     }
